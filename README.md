@@ -13,6 +13,19 @@ A Windows desktop application to monitor blood glucose levels using the LibreLin
 - ✅ **Trend Arrows**: Visual indicators showing glucose trends (rising, falling, stable)
 - ✅ **Configurable Settings**: Customize update intervals, server region, and alert thresholds
 
+## Download
+
+### Latest Release: v1.0.0-beta
+
+**[📥 Download v1.0.0-beta](https://github.com/Pavlo2809/LibreLink-Connector/releases/tag/v1.0.0-beta)**
+
+#### What's Included:
+- Pre-built Windows executable
+- No installation required
+- .NET 8.0 Runtime required (or use self-contained version)
+
+For all releases, visit the [Releases page](https://github.com/Pavlo2809/LibreLink-Connector/releases).
+
 ## Screenshots
 
 ### Login Screen
@@ -36,7 +49,15 @@ The main dashboard displays:
 
 ## Installation
 
-### Option 1: Build from Source
+### Option 1: Download Pre-built Release (Recommended)
+
+1. Download the latest release from the [Releases page](https://github.com/Pavlo2809/LibreLink-Connector/releases/latest)
+2. Extract the ZIP file to a folder of your choice
+3. Run `LibreLinkConnector.exe`
+
+**Note**: Requires [.NET 8.0 Runtime](https://dotnet.microsoft.com/download/dotnet/8.0) (or download the self-contained version which includes the runtime)
+
+### Option 2: Build from Source
 
 1. Install [.NET 8.0 SDK](https://dotnet.microsoft.com/download/dotnet/8.0)
 2. Clone or download this repository
@@ -49,7 +70,7 @@ dotnet build
 dotnet run
 ```
 
-### Option 2: Build Release Version
+### Option 3: Build Release Version
 
 ```powershell
 dotnet publish -c Release -r win-x64 --self-contained false
@@ -244,7 +265,9 @@ For issues, questions, or feature requests:
 
 ## Version
 
-Current version: **1.0.0**
+Current version: **1.0.0-beta**
+
+**[📥 Download Latest Release](https://github.com/Pavlo2809/LibreLink-Connector/releases/latest)**
 
 See [CHANGELOG.md](CHANGELOG.md) for version history and release notes.
 
