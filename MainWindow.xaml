@@ -1,0 +1,92 @@
+<Window x:Class="LibreLinkConnector.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="LibreLink Connector" 
+        Height="750" 
+        Width="950"
+        MinHeight="300"
+        MinWidth="300"
+        Background="{DynamicResource BackgroundBrush}"
+        WindowStartupLocation="CenterScreen"
+        AllowsTransparency="False"
+        WindowStyle="SingleBorderWindow">
+    
+    <Grid>
+        <!-- Normal Mode -->
+        <Grid x:Name="NormalModeGrid">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <!-- Modern Header with Gradient -->
+            <Border Grid.Row="0" 
+                    x:Name="HeaderBorder"
+                    Background="{StaticResource HeaderGradientBrush}" 
+                    Padding="24,20">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    
+                    <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center">
+                        <TextBlock Text="🩸" FontSize="32" VerticalAlignment="Center" Margin="0,0,12,0"/>
+                        <StackPanel>
+                            <TextBlock Text="LibreLink Connector" 
+                                       FontSize="24" 
+                                       FontWeight="SemiBold" 
+                                       Foreground="White"/>
+                            <TextBlock Text="Blood Glucose Monitor" 
+                                      FontSize="12" 
+                                      Foreground="#E0E0E0"
+                                      Margin="0,2,0,0"/>
+                        </StackPanel>
+                    </StackPanel>
+                    
+                    <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center">
+                        <Button Content="📐 Widget" 
+                                x:Name="WidgetButton"
+                                Style="{StaticResource IconButtonStyle}"
+                                Foreground="White"
+                                Click="ToggleWidgetButton_Click"
+                                Margin="0,0,8,0"
+                                ToolTip="Switch to Widget Mode"/>
+                        
+                        <Button Content="⚙" 
+                                x:Name="SettingsButton"
+                                Style="{StaticResource IconButtonStyle}"
+                                Foreground="White"
+                                Click="SettingsButton_Click"
+                                Margin="0,0,8,0"
+                                ToolTip="Settings"/>
+                        
+                        <Button Content="🚪" 
+                                x:Name="LogoutButton"
+                                Style="{StaticResource IconButtonStyle}"
+                                Foreground="White"
+                                Click="LogoutButton_Click"
+                                ToolTip="Logout"/>
+                    </StackPanel>
+                </Grid>
+            </Border>
+
+            <!-- Main Content Area - ContentControl for view switching -->
+            <ContentControl Grid.Row="1" 
+                            x:Name="MainContentControl"/>
+        </Grid>
+
+        <!-- Widget Mode (Compact View) -->
+        <Grid x:Name="WidgetModeGrid" Visibility="Collapsed">
+            <Border x:Name="WidgetBorder"
+                    Style="{StaticResource CompactCardStyle}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Background="{DynamicResource CardBrush}"
+                    MouseLeftButtonDown="WidgetBorder_MouseLeftButtonDown"
+                    Cursor="Hand">
+                <ContentControl x:Name="WidgetContentControl"/>
+            </Border>
+        </Grid>
+    </Grid>
+</Window>
