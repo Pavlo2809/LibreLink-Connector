@@ -4,6 +4,7 @@ A Windows desktop application to monitor blood glucose levels using the LibreLin
 
 ## Features
 
+- ✅ **Widget Mode**: Compact always-on-top display for continuous monitoring without window switching
 - ✅ **Modern UI**: Clean, easy-to-read interface displaying current glucose readings
 - ✅ **Auto-Update**: Automatic refresh of glucose data at configurable intervals (default: 5 minutes)
 - ✅ **Secure Credential Storage**: Encrypted storage of login credentials using Windows Data Protection API
